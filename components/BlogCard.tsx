@@ -18,7 +18,15 @@ export default function BlogCard({
 }: BlogCardProps) {
   return (
     <div className="w-[340px] bg-white rounded-lg shadow-sm flex flex-col items-start overflow-hidden">
-      <Image src={imageSrc} alt="blog image" width={340} height={288} />
+      <div className="relative w-full h-[288px]">
+        <Image
+          src={imageSrc}
+          alt="blog image"
+          fill
+          style={{ objectFit: "cover" }}
+          className="w-full h-full"
+        />
+      </div>
       <div className="p-6 flex flex-col gap-3">
         <div className="flex flex-col gap-2">
           <div className="bg-[#F0FDF4] inline-flex w-fit items-center rounded-full border border-green-200 px-2 py-0.5 text-green-700">
