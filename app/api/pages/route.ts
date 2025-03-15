@@ -130,20 +130,14 @@ const hardcodedPages: PageStructure[] = [
     name: "Home",
     path: "/",
   },
-  // Add other pages here based on your app structure
-  // For example:
-  // {
-  //   name: "About",
-  //   path: "/about",
-  // },
-  // {
-  //   name: "Features",
-  //   path: "/features",
-  //   children: [
-  //     { name: "Feature 1", path: "/features/feature-1" },
-  //     { name: "Feature 2", path: "/features/feature-2" },
-  //   ]
-  // }
+  {
+    name: "Foundational",
+    path: "/foundational",
+    children: [
+      { name: "Blog Card", path: "/blog-card" },
+      { name: "Testimonial", path: "/testimonial" },
+    ],
+  },
 ];
 
 export async function GET() {
