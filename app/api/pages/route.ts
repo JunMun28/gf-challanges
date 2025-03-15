@@ -102,7 +102,7 @@ export async function GET() {
   } catch (error) {
     console.error("Error generating pages structure:", error);
     return NextResponse.json(
-      { error: "Failed to generate pages structure", success: false },
+      { error: "Failed to generate pages structure: " + error, success: false },
       { status: 500 }
     );
   }
