@@ -92,7 +92,48 @@ function scanPages(
 
 export async function GET() {
   try {
+    // Get the app directory path
     const appDirectory = path.join(process.cwd(), "app");
+
+    // Check if the directory exists
+    if (!fs.existsSync(appDirectory)) {
+      console.error(`App directory not found at: ${appDirectory}`);
+      console.error(`Current working directory: ${process.cwd()}`);
+      console.error(
+        `Directory contents of cwd:`,
+        fs.readdirSync(process.cwd())
+      );
+
+      // In production (Vercel), try the .next directory structure
+      const altDirectories = [
+        // Try these alternative paths in Vercel environment
+        path.join(process.cwd(), ".next", "server", "app"),
+        path.join(process.cwd(), "src", "app"),
+        path.join(process.cwd(), ".vercel", "output", "functions", "app"),
+      ];
+
+      let foundAltPath = false;
+      for (const altPath of altDirectories) {
+        if (fs.existsSync(altPath)) {
+          console.log(`Found alternative app directory at: ${altPath}`);
+          const pages = scanPages(altPath);
+          foundAltPath = true;
+          return NextResponse.json({
+            pages,
+            success: true,
+          });
+        }
+      }
+
+      if (!foundAltPath) {
+        return NextResponse.json({
+          pages: [],
+          success: true,
+          message: "App directory not found, returning empty pages array",
+        });
+      }
+    }
+
     const pages = scanPages(appDirectory);
 
     return NextResponse.json({
@@ -101,8 +142,24 @@ export async function GET() {
     });
   } catch (error) {
     console.error("Error generating pages structure:", error);
+    console.error(
+      "Stack trace:",
+      error instanceof Error ? error.stack : "No stack trace"
+    );
+    console.error("Current working directory:", process.cwd());
+
+    try {
+      console.error("Root directory contents:", fs.readdirSync(process.cwd()));
+    } catch (e) {
+      console.error("Could not read root directory:", e);
+    }
+
     return NextResponse.json(
-      { error: "Failed to generate pages structure: " + error, success: false },
+      {
+        error: "Failed to generate pages structure: " + error,
+        success: false,
+        pages: [], // Return empty pages array to prevent frontend errors
+      },
       { status: 500 }
     );
   }
