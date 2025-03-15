@@ -29,7 +29,7 @@ export default function BlogCard({
       </div>
       <div className="p-6 flex flex-col gap-3">
         <div className="flex flex-col gap-2">
-          <div className="bg-[#F0FDF4] inline-flex w-fit items-center rounded-full border border-green-200 px-2 py-0.5 text-green-700">
+          <div className="bg-[#F0FDF4] text-sm/[20px] inline-flex w-fit items-center rounded-full border border-green-200 px-2 py-0.5 text-green-700">
             {tagName}
           </div>
           <div className="text-lg/[28px] font-semibold">{title}</div>
