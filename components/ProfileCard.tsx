@@ -20,7 +20,7 @@ export default function ProfileCard({
           <Image src={avatarSrc} alt="Profile Picture" width={64} height={64} />
         </div>
         <div className="flex justify-center items-center flex-col gap-2">
-          <div className="text-lg font-semibold">{name}</div>
+          <div className="text-xl text-neutral-900 font-medium">{name}</div>
           <div className="text-sm text-neutral-600">{jobTitle}</div>
         </div>
         <p className="text-neutral-600 text-center">{bio}</p>
