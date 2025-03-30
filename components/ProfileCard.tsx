@@ -1,27 +1,29 @@
 import Image from "next/image";
 
-export default function ProfileCard() {
+interface ProfileCardProps {
+  name?: string;
+  username?: string;
+  avatarSrc?: string;
+  bio?: string;
+}
+
+export default function ProfileCard({
+  name = "Name",
+  username = "Username",
+  avatarSrc = "/profile-thumbnail.png",
+  bio = "Bio",
+}: ProfileCardProps) {
   return (
     <div className="w-[340px] py-24 px-16 bg-white rounded-lg shadow-sm gap-40 flex flex-col">
       <div className="flex flex-col gap-24">
         <div className="flex justify-center items-center">
-          <Image
-            src="/profile-thumbnail.png"
-            alt="Profile Picture"
-            width={64}
-            height={64}
-          />
+          <Image src={avatarSrc} alt="Profile Picture" width={64} height={64} />
         </div>
         <div className="flex justify-center items-center flex-col gap-2">
-          <div className="text-lg font-semibold">Sarah Dole</div>
-          <div className="text-sm text-neutral-600">
-            Front End Engineer @ Microsoft
-          </div>
+          <div className="text-lg font-semibold">{name}</div>
+          <div className="text-sm text-neutral-600">{username}</div>
         </div>
-        <p className="text-neutral-600 text-center">
-          I turn coffee into bugs which are fixed by someone else. Certified
-          Stack Overflow and ChatGPT developer.
-        </p>
+        <p className="text-neutral-600 text-center">{bio}</p>
       </div>
       <div className="flex flex-col items-start gap-24">
         <button className="bg-indigo-700 text-white px-16 py-10 self-stretch shadow-sm rounded-sm">
