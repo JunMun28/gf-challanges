@@ -2,14 +2,14 @@ import Image from "next/image";
 
 interface ProfileCardProps {
   name?: string;
-  username?: string;
+  jobTitle?: string;
   avatarSrc?: string;
   bio?: string;
 }
 
 export default function ProfileCard({
   name = "Name",
-  username = "Username",
+  jobTitle = "Username",
   avatarSrc = "/profile-thumbnail.png",
   bio = "Bio",
 }: ProfileCardProps) {
@@ -21,7 +21,7 @@ export default function ProfileCard({
         </div>
         <div className="flex justify-center items-center flex-col gap-2">
           <div className="text-lg font-semibold">{name}</div>
-          <div className="text-sm text-neutral-600">{username}</div>
+          <div className="text-sm text-neutral-600">{jobTitle}</div>
         </div>
         <p className="text-neutral-600 text-center">{bio}</p>
       </div>
