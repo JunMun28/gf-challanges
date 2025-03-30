@@ -35,6 +35,7 @@ export default function ProfileCard({
             height="36"
             viewBox="0 0 36 36"
             fill="none"
+            aria-label="Github"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -47,6 +48,7 @@ export default function ProfileCard({
             height="36"
             viewBox="0 0 36 36"
             fill="none"
+            aria-label="LinkedIn"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -59,6 +61,7 @@ export default function ProfileCard({
             height="36"
             viewBox="0 0 36 36"
             fill="none"
+            aria-label="Instagram"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -71,6 +74,7 @@ export default function ProfileCard({
             height="36"
             viewBox="0 0 36 36"
             fill="none"
+            aria-label="X / Twitter"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
