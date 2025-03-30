@@ -12,6 +12,7 @@ export default function Home() {
       children: [
         { name: "Blog Card", path: "/foundational/blog-card" },
         { name: "Testimonial Card", path: "/foundational/testimonial-card" },
+        { name: "Profile Card", path: "/foundational/profile-card" },
       ],
     },
   ];
