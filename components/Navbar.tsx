@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="flex px-4 md:px-28 pt-4 w-full">
