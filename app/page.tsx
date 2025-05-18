@@ -13,6 +13,7 @@ export default function Home() {
         { name: "Blog Card", path: "/foundational/blog-card" },
         { name: "Testimonial Card", path: "/foundational/testimonial-card" },
         { name: "Profile Card", path: "/foundational/profile-card" },
+        { name: "Navbar", path: "/foundational/navbar" },
       ],
     },
   ];
