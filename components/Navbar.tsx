@@ -6,13 +6,13 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex px-4 md:px-28 pt-4 w-full">
+    <div className="flex px-4 lg:px-28 pt-4 w-full">
       <header className="flex items-center justify-between gap-24 py-4 w-full">
         <Image src="/abstractly.svg" alt="logo" width={112} height={32} />
         <button
           aria-label="Open mobile menu"
           id="mobile-menu-button"
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
         >
           <span aria-hidden="true">☰</span>
@@ -26,7 +26,7 @@ export default function Navbar() {
         >
           <nav
             id="slideout-menu"
-            className={`p-4 pt-8 md:hidden fixed top-0 bottom-0 left-0 bg-white w-full transform transition-transform ease-in-out duration-300 ${
+            className={`p-4 pt-8 lg:hidden fixed top-0 bottom-0 left-0 bg-white w-full transform transition-transform ease-in-out duration-300 ${
               isOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
@@ -64,7 +64,7 @@ export default function Navbar() {
           </nav>
         </div>
 
-        <nav className="grow shrink-0 basis-0 max-md:hidden">
+        <nav className="grow shrink-0 basis-0 max-lg:hidden">
           <ul className="flex items-center gap-8">
             <li>
               <a href="#">Home</a>
@@ -84,7 +84,7 @@ export default function Navbar() {
             </li>
           </ul>
         </nav>
-        <div className="flex items-start gap-4 max-md:hidden">
+        <div className="flex items-start gap-4 max-lg:hidden">
           <button className="py-[10px] px-4 border-neutral-200 rounded-[4px] bg-white shadow">
             Learn more
           </button>
