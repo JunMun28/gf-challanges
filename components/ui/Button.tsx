@@ -110,10 +110,14 @@ const Button = ({
   );
 
   if (href) {
+    const linkVariant =
+      variant === "primary" || variant === "secondary" || variant === "danger"
+        ? "primary"
+        : "gray";
     return (
       <Link
         href={href}
-        variant={variant}
+        variant={linkVariant}
         disabled={isDisabled}
         className={clsx(commonClasses, spacingClasses[size], className)}
         {...props}
@@ -136,17 +140,17 @@ const Button = ({
   }
 
   const children = isLabelHidden ? (
-    (
+    StartIcon ? (
       <StartIcon
         className={clsx("shrink-0", iconSizeClasses[size], iconClassName)}
         aria-hidden="true"
       />
-    ) || (
+    ) : EndIcon ? (
       <EndIcon
         className={clsx("shrink-0", iconSizeClasses[size], iconClassName)}
         aria-hidden="true"
       />
-    )
+    ) : null
   ) : (
     <>
       {StartIcon && (

@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 import {
   RiFacebookBoxLine,
   RiGithubLine,
@@ -107,9 +108,11 @@ const Footer = () => {
           )}
         >
           <div>
-            <img
+            <Image
               src="https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/logo.svg"
               alt="Stylenest's Logo"
+              width={32}
+              height={32}
               className="block h-8 w-auto"
             />
           </div>

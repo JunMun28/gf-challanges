@@ -60,13 +60,32 @@ const NewsletterForm = () => {
       className="flex w-full flex-col gap-4 md:flex-row"
     >
       <TextInput
+        label=""
         placeholder="Enter your email"
         errorMessage={errorMessage}
         onChange={(value) => setEmail(value)}
         value={email}
-        required
+        type="email"
+        id="email"
+        required={true}
+        isDisabled={false}
+        hintMessage=""
+        startIcon={null}
+        endIcon={null}
+        startIconClassName=""
+        endIconClassName=""
       />
-      <Button label="Subscribe" type="submit" isDisabled={submitting} />
+      <Button
+        label="Subscribe"
+        type="submit"
+        isDisabled={submitting}
+        className=""
+        startIcon={null}
+        endIcon={null}
+        isLabelHidden={false}
+        iconClassName=""
+        href={null}
+      />
     </form>
   );
 };
