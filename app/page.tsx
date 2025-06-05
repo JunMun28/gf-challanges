@@ -14,6 +14,10 @@ export default function Home() {
         { name: "Testimonial Card", path: "/foundational/testimonial-card" },
         { name: "Profile Card", path: "/foundational/profile-card" },
         { name: "Navbar", path: "/foundational/navbar" },
+        {
+          name: "Footer Multi Column",
+          path: "/foundational/footer-multi-column",
+        },
       ],
     },
   ];
